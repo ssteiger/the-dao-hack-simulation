@@ -41,7 +41,10 @@ Then the `DarkDAO.sol`can be used to attack and drain the funds from `TheDAO.sol
 
 For the attack to work, the DarkDAO first needs to hold some shares/tokens form TheDAO. This is done by calling the `function invest(address _to)` function of `TheDAO.sol` and passing the DarkDAO contract address.
 
-Then the `function attack(address _target)` function of the DarkDAO contract is executed by using a re-entrancy attack (calling `invest()` and `withdraw()` in the same transaction).
+Then the `attack(address _target)` function of the DarkDAO contract is executed (calling `invest()` and `withdraw()` in the same transaction).
+
+The `withdraw()` function sends ETH funds from TheDAO back to the DarkDAO.
+This triggeres the `fallback() external payable` function and the re-entrancy attack is executed by calling the `withdraw()` again.
 
 ## Screenshots
 
