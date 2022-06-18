@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Row, Col } from 'antd';
-import { ethers } from 'ethers';
-import { useBalance, useGasPrice } from 'eth-hooks';
-import { useContractReader } from 'eth-hooks';
+import React from 'react';
 import { useEventListener } from 'eth-hooks/events/useEventListener';
-import { Transactor } from '../../helpers';
 import Balance from '../../components/Balance';
 import Address from '../../components/Address';
-import { DarkContainer, Button, Badge } from '../../components/tailwind';
+import { DarkContainer, Badge } from '../../components/tailwind';
 
 export default function TheDAOCard({
   localProvider,
@@ -34,6 +29,7 @@ export default function TheDAOCard({
     localProvider,
     1, // start block
   );
+
   console.log({ withdrawalEvents });
 
   return (

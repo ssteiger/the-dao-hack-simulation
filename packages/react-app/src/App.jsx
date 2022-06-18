@@ -6,10 +6,9 @@ import {
   useOnBlock,
   useUserProviderAndSigner,
 } from 'eth-hooks';
-import { useEventListener } from 'eth-hooks/events/useEventListener';
 import { useExchangeEthPrice } from 'eth-hooks/dapps/dex';
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
-import { Link, Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import 'graphiql/graphiql.min.css';
 import './App.css';
@@ -31,7 +30,6 @@ const initialNetwork = NETWORKS.localhost; // <------- select your target fronte
 const DEBUG = false;
 const NETWORKCHECK = true;
 const USE_BURNER_WALLET = false; // toggle burner wallet feature
-const USE_NETWORK_SELECTOR = true;
 
 const web3Modal = Web3ModalSetup();
 

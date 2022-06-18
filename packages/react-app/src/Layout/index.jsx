@@ -3,10 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react';
 import { HomeIcon, MenuAlt2Icon, XIcon, CodeIcon } from '@heroicons/react/outline';
 
-import { Account, ThemeSwitch, NetworkSwitch } from '../components';
-
 import { classNames } from '../helpers';
-
+import { Account, ThemeSwitch, NetworkSwitch } from '../components';
 import Header from './Header';
 
 export default function Layout({
@@ -119,14 +117,14 @@ export default function Layout({
             </div>
           </Transition.Child>
           <div className="flex-shrink-0 w-14" aria-hidden="true">
-            {/* Dummy element to force sidebar to shrink to fit close icon */}
+            {/* dummy element to force sidebar to shrink to fit close icon */}
           </div>
         </Dialog>
       </Transition.Root>
 
-      {/* Static sidebar for desktop */}
+      {/* static sidebar for desktop */}
       <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-        {/* Sidebar component, swap this element with another sidebar if you like */}
+        {/* sidebar component, swap this element with another sidebar if you like */}
         <div className="flex flex-col flex-grow border-r border-gray-200 dark:border-gray-700 pt-5 bg-white dark:bg-gray-800 overflow-y-auto">
           <div className="flex items-center flex-shrink-0 px-4">
             <Header />
@@ -166,7 +164,7 @@ export default function Layout({
       </div>
       <div className="md:pl-64 flex flex-col flex-1">
         <div className="flex flex-col grow flex-1" style={{ overflowWrap: 'break-word' }}>
-          {/* Top nav */}
+          {/* top nav */}
           <div className="sticky top-0 z-10 flex flex-shrink-0 h-16 bg-white dark:bg-gray-800 shadow dark:shadow-gray-700">
             <button
               type="button"
@@ -197,7 +195,7 @@ export default function Layout({
               />
             </div>
           </div>
-          {/* Page content */}
+          {/* page content */}
           <div className="grow flex-1 bg-white dark:bg-gray-700 shadow dark:shadow-gray-700">
             <div className="px-4 sm:px-6 md:px-4">{children}</div>
           </div>

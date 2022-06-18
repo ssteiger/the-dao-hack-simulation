@@ -25,13 +25,12 @@ export default function DarkDAOCard({
     1, // start block
   );
 
+  // invest into TheDAO and get some DAO tokens
   const investInTheDAO = async () => {
     if (localProvider && readContracts && writeContracts) {
-      // 1. invest into TheDAO and get some DAO tokens
       const value = ethers.utils.parseEther('2.0');
       console.log(`DarkDAO is investing ${ethers.utils.formatEther(value)} Ξ into TheDAO`);
 
-      console.log({ writeContracts });
       const to = readContracts.DarkDAO.address;
       const result = await tx(
         writeContracts.TheDAO.invest(to, {
@@ -42,23 +41,23 @@ export default function DarkDAOCard({
     }
   };
 
+  /*
   const fundDarkDAO = async () => {
     if (localProvider && readContracts && writeContracts) {
-      // 1. fund DarkDAO with 1 eth
+      // fund DarkDAO with 1 eth
       const result = await tx({
         to: readContracts.DarkDAO.address,
         value: ethers.utils.parseEther('1.0'),
       });
     }
   };
+  */
 
   const executeHack = async () => {
     if (localProvider && readContracts && writeContracts) {
-      // 1. invest into TheDAO and get some DAO tokens
       const value = ethers.utils.parseEther('1.0');
       console.log(`attacking TheDAO using ${ethers.utils.formatEther(value)} Ξ (4x)`);
 
-      console.log({ writeContracts });
       const to = readContracts.TheDAO.address;
       const result = tx(
         writeContracts.DarkDAO.attack(to, {
