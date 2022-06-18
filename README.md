@@ -44,7 +44,7 @@ For the attack to work, the DarkDAO first needs to hold some shares/tokens form 
 Then the `attack(address _target)` function of the DarkDAO contract is executed (calling `invest()` and `withdraw()` in the same transaction).
 
 The `withdraw()` function sends ETH funds from TheDAO back to the DarkDAO.
-This triggeres the `fallback() external payable` function and the re-entrancy attack is executed by calling the `withdraw()` again.
+This triggers the `fallback() external payable` function and the re-entrancy attack is executed by calling the `withdraw()` again.
 
 ## Screenshots
 
