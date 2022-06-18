@@ -1,0 +1,67 @@
+{
+  "name": "@the-dao-hack-simulation/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "react-app:build": "yarn workspace @the-dao-hack-simulation/react-app build --max-old-space-size=12288",
+    "react-app:eject": "yarn workspace @the-dao-hack-simulation/react-app eject",
+    "react-app:start": "yarn workspace @the-dao-hack-simulation/react-app start",
+    "react-app:test": "yarn workspace @the-dao-hack-simulation/react-app test",
+    "build": "yarn workspace @the-dao-hack-simulation/react-app build --max-old-space-size=12288",
+    "prettier": "yarn workspace @the-dao-hack-simulation/react-app prettier",
+    "chain": "yarn workspace @the-dao-hack-simulation/hardhat chain",
+    "fork": "yarn workspace @the-dao-hack-simulation/hardhat fork",
+    "node": "yarn workspace @the-dao-hack-simulation/hardhat chain",
+    "test": "yarn workspace @the-dao-hack-simulation/hardhat test",
+    "start": "yarn workspace @the-dao-hack-simulation/react-app start",
+    "compile": "yarn workspace @the-dao-hack-simulation/hardhat compile",
+    "deploy": "yarn workspace @the-dao-hack-simulation/hardhat deploy",
+    "verify": "yarn workspace @the-dao-hack-simulation/hardhat verify",
+    "watch": "yarn workspace @the-dao-hack-simulation/hardhat watch",
+    "accounts": "yarn workspace @the-dao-hack-simulation/hardhat accounts",
+    "balance": "yarn workspace @the-dao-hack-simulation/hardhat balance",
+    "send": "yarn workspace @the-dao-hack-simulation/hardhat send",
+    "ipfs": "yarn workspace @the-dao-hack-simulation/react-app ipfs",
+    "surge": "yarn workspace @the-dao-hack-simulation/react-app surge",
+    "s3": "yarn workspace @the-dao-hack-simulation/react-app s3",
+    "ship": "yarn workspace @the-dao-hack-simulation/react-app ship",
+    "generate": "yarn workspace @the-dao-hack-simulation/hardhat generate",
+    "account": "yarn workspace @the-dao-hack-simulation/hardhat account",
+    "mineContractAddress": "cd packages/hardhat && npx hardhat mineContractAddress",
+    "wallet": "cd packages/hardhat && npx hardhat wallet",
+    "fundedwallet": "cd packages/hardhat && npx hardhat fundedwallet",
+    "flatten": "cd packages/hardhat && npx hardhat flatten",
+    "clean": "cd packages/hardhat && npx hardhat clean",
+    "run-graph-node": "yarn workspace @the-dao-hack-simulation/services run-graph-node",
+    "remove-graph-node": "yarn workspace @the-dao-hack-simulation/services remove-graph-node",
+    "clean-graph-node": "yarn workspace @the-dao-hack-simulation/services clean-graph-node",
+    "graph-prepare": "mustache packages/subgraph/config/config.json packages/subgraph/src/subgraph.template.yaml > packages/subgraph/subgraph.yaml",
+    "graph-codegen": "yarn workspace @the-dao-hack-simulation/subgraph graph codegen",
+    "graph-build": "yarn workspace @the-dao-hack-simulation/subgraph graph build",
+    "graph-create-local": "yarn workspace @the-dao-hack-simulation/subgraph graph create --node http://localhost:8020/ scaffold-eth/your-contract",
+    "graph-remove-local": "yarn workspace @the-dao-hack-simulation/subgraph graph remove --node http://localhost:8020/ scaffold-eth/your-contract",
+    "graph-deploy-local": "yarn workspace @the-dao-hack-simulation/subgraph graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/your-contract",
+    "graph-ship-local": "yarn graph-prepare && yarn graph-codegen && yarn graph-deploy-local",
+    "deploy-and-graph": "yarn deploy && yarn graph-ship-local",
+    "theme": "yarn workspace @the-dao-hack-simulation/react-app theme",
+    "watch-theme": "yarn workspace @the-dao-hack-simulation/react-app watch",
+    "postinstall": "husky install"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**",
+      "**/hardhat",
+      "**/hardhat/**",
+      "**/hardhat-ts",
+      "**/hardhat-ts/**"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^7.0.2"
+  }
+}
