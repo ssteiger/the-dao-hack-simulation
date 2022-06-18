@@ -22,7 +22,7 @@ $ yarn deploy
 $ yarn start
 ```
 
-## Structure
+## Project Structure
 
 The projects contains two smart contracts located in `pakages/hardhat/contracts/`:
 
@@ -49,14 +49,6 @@ Then the `function attack(address _target)` function of the DarkDAO contract is 
 ![dao_hack_02](./packages/react-app/public/screenshots/dao_hack_02.png)
 ![dao_hack_03](./packages/react-app/public/screenshots/dao_hack_03.png)
 
-## Resources
-
-* [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth)
-
-## License
-
-MIT
-
 ## DAO Hack history
 
 Have you ever wondered why there are two Ethereums listed on most exchanges and token lists, Ethereum and Ethereum Classic?
@@ -73,3 +65,11 @@ Further reading:
 * [Ethereum Foundation statement](https://blog.ethereum.org/2016/06/17/critical-update-re-dao-vulnerability/)
 * [Martin Koeppelman DAO FAQ](https://www.reddit.com/r/ethereum/comments/4os7l5/the_big_thedao_heist_faq/)
 * [Overview of relevant transactions of the hack](https://medium.com/@oaeee/the-rise-of-the-dark-dao-72b21a2212e3#.rnb1n01h8)
+
+## Resources
+
+* [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth)
+
+## License
+
+MIT
