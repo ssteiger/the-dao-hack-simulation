@@ -1,7 +1,9 @@
 import React from 'react';
 import { ethers } from 'ethers';
 import { useContractReader } from 'eth-hooks';
+import { useEventListener } from 'eth-hooks/events/useEventListener';
 import { Transactor } from '../../helpers';
+import Address from '../../components/Address';
 import Balance from '../../components/Balance';
 import { DarkContainer, Button, Badge } from '../../components/tailwind';
 
@@ -14,6 +16,14 @@ export default function DarkDAOCard({
   gasPrice,
 }) {
   const tx = Transactor(localProvider);
+
+  const reenterEvents = useEventListener(
+    readContracts,
+    'DarkDAO',
+    'Reenter',
+    localProvider,
+    1, // start block
+  );
 
   const investInTheDAO = async () => {
     if (localProvider && readContracts && writeContracts) {
@@ -101,13 +111,34 @@ export default function DarkDAOCard({
         </div>
       </DarkContainer>
 
-      <DarkContainer>
+      <DarkContainer className="mb-2">
         <div className="flex justify-center">
           <Button color="red" onClick={executeHack}>
             2. Execute Hack
           </Button>
         </div>
       </DarkContainer>
+
+      <DarkContainer className="mb-2">
+        <div className="flex justify-center text-lg">Re-Entrancy Logs</div>
+      </DarkContainer>
+
+      {reenterEvents.map(event => {
+        const { args } = event;
+        const { _target, _balance } = args;
+
+        return (
+          <DarkContainer className="mb-2 flex justify-between">
+            <div>
+              <Address address={_target} size={'short'} />
+            </div>
+
+            <Badge color="green">
+              <Balance balance={_balance} price={price} textSize="text-base" />
+            </Badge>
+          </DarkContainer>
+        );
+      })}
     </div>
   );
 }
