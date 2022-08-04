@@ -11,17 +11,11 @@ const noContractDisplay = (
     Loading...{' '}
     <div style={{ padding: 32 }}>
       You need to run{' '}
-      <span
-        className="highlight"
-        style={{ marginLeft: 4, /* backgroundColor: "#f1f1f1", */ padding: 4, borderRadius: 4, fontWeight: 'bolder' }}
-      >
+      <span className="highlight" style={{ marginLeft: 4, padding: 4, borderRadius: 4, fontWeight: 'bolder' }}>
         yarn run chain
       </span>{' '}
       and{' '}
-      <span
-        className="highlight"
-        style={{ marginLeft: 4, /* backgroundColor: "#f1f1f1", */ padding: 4, borderRadius: 4, fontWeight: 'bolder' }}
-      >
+      <span className="highlight" style={{ marginLeft: 4, padding: 4, borderRadius: 4, fontWeight: 'bolder' }}>
         yarn run deploy
       </span>{' '}
       to see your contract here.
@@ -31,10 +25,7 @@ const noContractDisplay = (
         ☢️
       </span>
       Warning: You might need to run
-      <span
-        className="highlight"
-        style={{ marginLeft: 4, /* backgroundColor: "#f1f1f1", */ padding: 4, borderRadius: 4, fontWeight: 'bolder' }}
-      >
+      <span className="highlight" style={{ marginLeft: 4, padding: 4, borderRadius: 4, fontWeight: 'bolder' }}>
         yarn run deploy
       </span>{' '}
       <i>again</i> after the frontend comes up!
@@ -116,21 +107,13 @@ export default function Contract({
 
   return (
     <div style={{ margin: 'auto', width: '70vw' }}>
-      <div
-        className="font-normal text-gray-900 dark:text-white"
-        title={
-          <div style={{ fontSize: 24 }}>
-            {name}
-            <div style={{ float: 'right' }}>
-              <Address value={address} />
-              <Balance address={address} provider={provider} price={price} />
-            </div>
-          </div>
-        }
-        style={{ marginTop: 25, width: '100%' }}
-        loading={contractDisplay && contractDisplay.length <= 0}
-      >
-        {contractIsDeployed ? contractDisplay : noContractDisplay}
+      <div className="text-gray-900 dark:text-white">
+        <div className="flex justify-around py-5">
+          <div className="flex text-lg">{name}</div>
+          <Address value={address} size="long" />
+          <Balance address={address} provider={provider} price={price} />
+        </div>
+        <div style={{ float: 'right', width: '100%' }}>{contractIsDeployed ? contractDisplay : noContractDisplay}</div>
       </div>
     </div>
   );

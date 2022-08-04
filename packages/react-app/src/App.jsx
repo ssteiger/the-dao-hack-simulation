@@ -203,7 +203,7 @@ function App(props) {
             />
           </Route>
           <Route exact path="/the-dao-contract">
-            <div className="dark:bg-gray-800 p-4 my-4 rounded-lg">
+            <div className="flex w-full dark:bg-gray-800 p-4 my-4 rounded-lg">
               <Contract
                 name="TheDAO"
                 price={price}
@@ -216,7 +216,7 @@ function App(props) {
             </div>
           </Route>
           <Route exact path="/dark-dao-contract">
-            <div className="dark:bg-gray-800 p-4 my-4 rounded-lg">
+            <div className="flex w-full dark:bg-gray-800 p-4 my-4 rounded-lg">
               <Contract
                 name="DarkDAO"
                 price={price}
