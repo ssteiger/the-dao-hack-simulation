@@ -39,7 +39,7 @@ $ yarn deploy
 $ yarn start
 ```
 
-## Project Structure
+## How it works
 
 The projects contains two smart contracts located in `pakages/hardhat/contracts/`:
 
